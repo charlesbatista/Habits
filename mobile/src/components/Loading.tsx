@@ -6,9 +6,9 @@ export function Loading() {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#7C3AED'
+            backgroundColor: '#09090a'
         }}>
-            <ActivityIndicator color="#fff" />
+            <ActivityIndicator color="#7C3AED" />
         </View>
     )
 }
