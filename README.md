@@ -17,7 +17,7 @@ A proposta é utilizar React Native para o front-end, Node.js para o back-end, b
 
 - React Native (Front-end)
 - Node.js (Servidor)
-- Fastify (Rotas)
+- Fastify (Rotas RESTful APi)
 - Prisma (Banco de dados)
 
 ## Projeto
@@ -65,7 +65,31 @@ Como exemplo, se quisermos executar o arquivo `/server/server.ts` usando o TypeS
 <pre>npx tsx /server/server.ts</pre>
 
 Pra agilizar nosso desenvolvimento, vamos criar um script dentro do nosso `package.json`, e em <b>scripts</b> vamos adicionar o comando:
+
 <img src="https://github.com/charlesbatista/Habits/blob/master/script%20package.json.png" />
+
+<pre>"scripts": {
+    "dev": "tsx watch src/server.ts"
+  }
+</pre>
+
+Um ponto importante neste script é que sempre que alteramos algo nele, precisamos rodá-lo novamente para puxar as últimas atualizações. Pra evitar esse retrabalho, existe um comando que vai observar qualquer alteração e rodar o arquivo de novo de forma automática. Esse comando é o `watch`. Observe que já adicionamos no nosso script criado acima.
+
+<h2>Banco de Dados</h2>
+
+Existem várias formas de se trabalhar com banco de dados em aplicações Node.js. Para este projeto, vamos utilizar ORM (Object Relational Mapper), ou Mapeador de Relação de Objetos, que é uma técnica utilizada no desenvolvimento de software que permite mapear objetos em um sistema orientado a objetos para tabelas em um banco de dados relacional. Neste caso, a biblioteca que nos permite utilizar ORM será o Prisma. 
+
+Vamos instalar a biblioteca de desenvolvimento do Prisma través do comando:
+<pre>npm i prisma -D</pre>
+
+E agora a dependência que vamos utilizar para manipular o nosso banco do lado do cliente, através do comando:
+<pre>npm i @prisma/client</pre>
+
+Para iniciar o prisma no projeto, rodaremos o comando abaixo:
+<pre>npx prisma init --datasource-provider SQLite</pre>
+
+Neste caso, utilizamos o provedor do banco de dados `SQLite` porque podemos manipulá-lo diretamente no arquivo local dentro do nosso projeto, facilitando nossa vida ao invés de manipular o banco através de um servidor de banco de dados separado. SQLite é uma escolha comum para aplicativos que precisam de um banco de dados local leve e de fácil integração. Ele armazena o banco de dados em um único arquivo, o que simplifica o gerenciamento e elimina a necessidade de configurar um servidor de banco de dados separado. Isso é especialmente útil para projetos menores ou aplicações que não exigem alta concorrência ou escalabilidade horizontal. 
+
 
 ## Licença
 
