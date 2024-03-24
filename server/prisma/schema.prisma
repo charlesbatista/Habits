@@ -5,14 +5,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
-generator erd {
-  provider = "prisma-erd-generator"
-}
-
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+// as tabelas definidas aqui, serão geradas no banco de dados através do comando
+// npx prisma migrate dev, e o banco será armazenado no arquivo dev.db.
+// para acessar a interface do prisma no navegador, vamos executar o comando:
+// npx prisma studio.
 
 model Habit {
   id         String   @id @default(uuid())
@@ -22,6 +23,8 @@ model Habit {
   dayHabits DayHabit[]
   weekDays  HabitWeekDays[]
 
+  // apenas renomeando a tabela para que tenha a primeira letra 
+  // do nome da tabela minúscula, ao invés de Habit.
   @@map("habits")
 }
 
