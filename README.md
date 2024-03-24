@@ -90,6 +90,12 @@ Para iniciar o prisma no projeto, rodaremos o comando abaixo:
 
 Neste caso, utilizamos o provedor do banco de dados `SQLite` porque podemos manipulá-lo diretamente no arquivo local dentro do nosso projeto, facilitando nossa vida ao invés de manipular o banco através de um servidor de banco de dados separado. SQLite é uma escolha comum para aplicativos que precisam de um banco de dados local leve e de fácil integração. Ele armazena o banco de dados em um único arquivo, o que simplifica o gerenciamento e elimina a necessidade de configurar um servidor de banco de dados separado. Isso é especialmente útil para projetos menores ou aplicações que não exigem alta concorrência ou escalabilidade horizontal. 
 
+Uma vez que criamos nossas tabelas dentro do arquivo `schema.prisma`, rodamos o comando:
+<pre>npx prisma migrate dev</pre>
+
+Este comando irá criar as nossa tabelas, conforme definimos nas models.
+
+Para mais informações sobre o Prisma, acesse a documentação: [https://www.prisma.io/docs]
 
 ## Licença
 
