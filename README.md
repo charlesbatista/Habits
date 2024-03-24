@@ -22,6 +22,8 @@ A proposta é utilizar React Native para o front-end, Node.js para o back-end, b
 
 ## Projeto
 
+<img src="https://github.com/charlesbatista/Habits/blob/master/Capa.jpg" />
+
 Para acessar o layout do projeto que seguimos, visite o link do Figma: [Hábitos (e)](https://www.figma.com/community/file/1195327109778210238/habits-e)
 
 ## O que Aprendi?
@@ -45,6 +47,25 @@ Este comando criará um arquivo na pasta chamado `package.json`. Este arquivo co
 Para instalar bibliotecas de terceiros, usamos o comando:
 
 <pre>npm install [nome-da-biblioteca]</pre>
+
+Uma vez que instalamos nossa primeira biblioteca, um arquivo chamado `package.lock` também será criado automaticamente, contendo informações que não precisamos mexer, uma vez que é usado para controle interno do próprio `npm`. Também será criado um diretório chamado `node_modules`, que é justamente o local onde nossas bibliotecas serão armazenadas para utilização no nosso projeto.
+pm.
+
+Como estamos utilizando TypeScript, vamos iniciá-lo no projeto utilizando o comando:
+<pre>npx tsx --init</pre>
+
+Será criado um arquivo chamadio `tsconfig.json`, que guarda toda a configuração utilizada pelo TypeScript em nosso projeto. Uma configuração inicial importante é que neste projeto utilizamos a versão `es2020`. Pra isso, vamos abrir esse arquivo e na configuração <a href="https://www.typescriptlang.org/tsconfig#target" target="_blank"><b>target</b></a> e alterar para essa versão.
+
+O próximo passo é instalar o TypeScript como uma dependência de desenvolvimento do projeto. Pra isso, vamos executar o comando:
+<pre>npm i tsx -D</pre>
+
+Isso nos permite executar nossos scripts .ts sempre precisar realizar conversões desse nosso script anteriormente.
+
+Como exemplo, se quisermos executar o arquivo `/server/server.ts` usando o TypeScript, basta executar o comando:
+<pre>npx tsx /server/server.ts</pre>
+
+Pra agilizar nosso desenvolvimento, vamos criar um script dentro do nosso `package.json`, e em <b>scripts</b> vamos adicionar o comando:
+<img src="https://github.com/charlesbatista/Habits/blob/master/script%20package.json.png" />
 
 ## Licença
 
