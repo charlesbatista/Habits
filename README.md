@@ -75,7 +75,7 @@ Pra agilizar nosso desenvolvimento, vamos criar um script dentro do nosso `packa
 
 Um ponto importante neste script é que sempre que alteramos algo nele, precisamos rodá-lo novamente para puxar as últimas atualizações. Pra evitar esse retrabalho, existe um comando que vai observar qualquer alteração e rodar o arquivo de novo de forma automática. Esse comando é o `watch`. Observe que já adicionamos no nosso script criado acima.
 
-<h2>Banco de Dados</h2>
+### Banco de Dados
 
 Existem várias formas de se trabalhar com banco de dados em aplicações Node.js. Para este projeto, vamos utilizar ORM (Object Relational Mapper), ou Mapeador de Relação de Objetos, que é uma técnica utilizada no desenvolvimento de software que permite mapear objetos em um sistema orientado a objetos para tabelas em um banco de dados relacional. Neste caso, a biblioteca que nos permite utilizar ORM será o Prisma. 
 
@@ -96,6 +96,23 @@ Uma vez que criamos nossas tabelas dentro do arquivo `schema.prisma`, rodamos o 
 Este comando irá criar as nossa tabelas, conforme definimos nas models.
 
 Para mais informações sobre o Prisma, acesse a documentação: [https://www.prisma.io/docs]
+
+### CORS
+
+Neste projeto, utilizamos o CORS (Cross-Origin Resource Sharing) como mecanismo de segurança. "É um mecanismo que usa cabeçalhos adicionais HTTP para informar a um navegador que permita que um aplicativo Web seja executado em uma origem (domínio) com permissão para acessar recursos selecionados de um servidor em uma origem distinta. Um aplicativo Web executa uma requisição cross-origin HTTP ao solicitar um recurso que tenha uma origem diferente (domínio, protocolo e porta) da sua própria origem." [https://developer.mozilla.org/pt-BR/docs/Web/HTTP/CORS]
+
+Em outras palavras, ele vai dizer quais aplicações poderão acessar os recursos que estamos definindo no nosso back-end, como recursos de manipulação de dados do nosso banco.
+
+Pra começarmos a configurar, vamos executar o comando:
+<pre>npm i @fastify/cors</pre>
+
+Pra registrá-lo no projeto, dentro do arquivo `server.ts`, vamos inserir:
+<pre>import cors from '@fastify/cors'</pre>
+
+E depois:
+<pre>const app = Fastify()
+
+app.register(cors)</pre>
 
 ## Licença
 
