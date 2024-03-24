@@ -56,7 +56,6 @@ export function Habit() {
       setDayInfo(response.data);
       setCompletedHabits(response.data.completedHabits);
     } catch (error) {
-      console.log(error);
       Alert.alert(
         "Ops!",
         "Não foi possível carregar as informações dos hábitos."
